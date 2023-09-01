@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* colors */
+  /* primery */
+  --blue: hsl(246, 80%, 60%);
+
+  --Light-orange: hsl(15, 100%, 70%);
+  --Soft-blue: hsl(195, 74%, 62%);
+  --Light-red: hsl(348, 100%, 68%);
+  --Lime-green: hsl(145, 58%, 55%);
+  --Violet: hsl(264, 64%, 52%);
+  --Soft-orange: hsl(43, 84%, 65%);
+
+  /* neutral */
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Active-blue: hsl(236, 38%, 28%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+
+  /* templating for cards */
+  --bg: var(--Dark-blue);
+  --txt: whitesmoke;
+  --transition: 200ms ease-in-out;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  background-color: var(--Very-dark-blue);
+  color: var(--txt);
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: clamp(1rem, 3vw, 2rem);
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--bg);
+  border-radius: 1rem;
+}
+
+.card--avatar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card--avatar-top {
+  border-radius: 1rem;
+  background-color: var(--blue);
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+.avatar {
+  width: clamp(5rem, 7vw, 7.5rem);
+  border: 0.2rem solid whitesmoke;
+  border-radius: 100vw;
+  object-fit: cover;
+  /* flex: 1; */
+}
+
+h1 {
+  font-size: 1.2rem;
+  /* flex: 2; */
+  font-weight: 300;
+  color: var(--text);
+}
+
+h1 > span {
+  font-size: 0.8rem;
+  color: var(--Pale-Blue);
+}
+
+.card--avatar-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1em 0.5rem;
+}
+
+.timecard {
+  background-color: var(--Light-orange);
+  cursor: pointer;
+}
+
+.timecard--top {
+  position: relative;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.icon {
+  position: absolute;
+  top: -0.7rem;
+  right: 0.7rem;
+  width: 25%;
+}
+
+.timecard--bottom {
+  position: relative;
+  background-color: var(--Dark-blue);
+  padding: 1em;
+  border-radius: 1rem;
+  display: grid;
+  gap: clamp(0.5rem, 2vw, 2rem);
+}
+
+.timecard--amt {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.current {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.previous {
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--Pale-Blue);
+}
+
+.timecard--bottom:hover {
+  background-color: var(--Active-blue);
+}
+
+.timecard--title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.timecard--title .btn {
+  flex: 0 1 0%;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.btn {
+  font: inherit;
+  background: inherit;
+  border: none;
+  color: var(--Desaturated-blue);
+  flex: 1 1 100%;
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.8rem;
+  cursor: pointer;
+  box-shadow: 0 0 0 -0.5rem var(--bg), 0 0 0 -0.5rem var(--Very-dark-blue);
+  transition: box-shadow var(--transition), color var(--transition);
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:focus-visible {
+  box-shadow: 0 0 0 -0.1rem var(--bg), 0 0 0 -0.4rem var(--Very-dark-blue);
+}
+
+.btn:where(.active, :hover, :focus-within) {
+  color: var(--txt);
+}
