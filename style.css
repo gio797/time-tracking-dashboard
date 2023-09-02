@@ -35,8 +35,9 @@ body {
   font-family: "Rubik", sans-serif;
   background-color: var(--Very-dark-blue);
   color: var(--txt);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   min-height: 100vh;
   padding: 1rem;
 }
@@ -44,9 +45,17 @@ body {
 .container {
   display: flex;
   flex-direction: column;
+
+  gap: clamp(1rem, 3vw, 1.6rem);
+  /* justify-content: space-between; */
+}
+
+.container--timecards {
+  display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  gap: clamp(1rem, 3vw, 2rem);
-  justify-content: center;
+  gap: clamp(1rem, 3vw, 1.6rem);
+  /* justify-content: center; */
 }
 
 .card {
@@ -67,14 +76,13 @@ body {
   align-items: center;
   padding: 1rem;
   gap: 1rem;
+  flex: 2;
 }
 
 .avatar {
   width: clamp(5rem, 7vw, 7.5rem);
   border: 0.2rem solid whitesmoke;
   border-radius: 100vw;
-  object-fit: cover;
-  /* flex: 1; */
 }
 
 h1 {
@@ -95,6 +103,7 @@ h1 > span {
   align-items: center;
   gap: 0.5rem;
   padding: 1em 0.5rem;
+  flex: 1;
 }
 
 .timecard {
@@ -182,7 +191,7 @@ h2 {
   font: inherit;
   background: inherit;
   border: none;
-  color: var(--Desaturated-blue);
+  color: var(--Pale-Blue);
   flex: 1 1 100%;
   border-radius: 0.5rem;
   padding: 0.2rem 0.8rem;
@@ -201,4 +210,26 @@ h2 {
 
 .btn:where(.active, :hover, :focus-within) {
   color: var(--txt);
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    flex-direction: row;
+  }
+  .container--timecards {
+    flex-direction: row;
+    /* max-width: 586px; */
+    width: clamp(10rem, 40vw, 40rem);
+    /* flex-wrap: wrap; */
+  }
+
+  .card--avatar-top {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
 }
