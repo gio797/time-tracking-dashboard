@@ -98,8 +98,26 @@ h1 > span {
 }
 
 .timecard {
-  background-color: var(--Light-orange);
   cursor: pointer;
+}
+
+.timecard-work {
+  background-color: var(--Light-orange);
+}
+.timecard-play {
+  background-color: var(--Soft-blue);
+}
+.timecard-study {
+  background-color: var(--Light-red);
+}
+.timecard-exercise {
+  background-color: var(--Lime-green);
+}
+.timecard-social {
+  background-color: var(--Violet);
+}
+.timecard-selfCare {
+  background-color: var(--Soft-orange);
 }
 
 .timecard--top {
