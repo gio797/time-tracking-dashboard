@@ -45,7 +45,6 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-
   gap: clamp(1rem, 3vw, 1.6rem);
   /* justify-content: space-between; */
 }
@@ -210,6 +209,10 @@ h2 {
 
 .btn:where(.active, :hover, :focus-within) {
   color: var(--txt);
+}
+
+[role="tabpanel"][aria-hidden="true"] {
+  display: none;
 }
 
 @media screen and (min-width: 480px) {
