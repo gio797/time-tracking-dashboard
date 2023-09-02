@@ -1,6 +1,8 @@
 // get tabs and panels
 const tabs = [...document.querySelectorAll("[role=tab]")];
 const panels = [...document.querySelectorAll("[role=tabpanel]")];
+const testDiv = document.querySelector(".test");
+console.log(testDiv);
 
 function handleTabClick(e) {
   // get panel to show
@@ -52,3 +54,18 @@ tabs.forEach((tab) => {
 
 //keyboard events
 window.addEventListener("keydown", handleKeyDownEvent);
+
+fetch("./data.json")
+  .then((res) => res.json())
+  .then((data) => {
+    let htmlData;
+    data.map((item) => {
+      htmlData += `
+                  <div>
+                    <h2>${item.title}</h2>
+                  </div>
+                `;
+    });
+
+    testDiv.innerHTML = htmlData;
+  });
