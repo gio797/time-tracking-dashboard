@@ -195,7 +195,9 @@ h2 {
   border-radius: 0.5rem;
   padding: 0.2rem 0.8rem;
   cursor: pointer;
-  box-shadow: 0 0 0 -0.5rem var(--bg), 0 0 0 -0.5rem var(--Very-dark-blue);
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 0 -0.5rem var(--bg), 0 0 0 -0.5rem var(--blue);
   transition: box-shadow var(--transition), color var(--transition);
 }
 
@@ -204,10 +206,10 @@ h2 {
 }
 
 .btn:focus-visible {
-  box-shadow: 0 0 0 -0.1rem var(--bg), 0 0 0 -0.4rem var(--Very-dark-blue);
+  box-shadow: 0 0 0 0.1rem var(--bg), 0 0 0 0.4rem var(--blue);
 }
 
-.btn:where(.active, :hover, :focus-within) {
+.btn:where([aria-selected="true"], :hover, :focus-visible) {
   color: var(--txt);
 }
 
@@ -219,6 +221,12 @@ h2 {
   .container {
     flex-direction: row;
   }
+
+  .card--avatar-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .container--timecards {
     flex-direction: row;
     /* max-width: 586px; */
@@ -232,7 +240,18 @@ h2 {
     justify-content: space-around;
   }
 
+  .timecard--amt {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    min-width: 100px;
+  }
+  .current {
     font-size: 2rem;
   }
 }

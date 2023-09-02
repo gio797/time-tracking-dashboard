@@ -42,26 +42,26 @@
             role="tab"
             aria-selected="true"
             aria-controls="panel-daily"
-            tabpanel="tab-daily"
-            class="btn active"
+            id="tab-daily"
+            class="btn tab"
           >
             Daily
           </button>
           <button
             role="tab"
-            aria-selected="true"
+            aria-selected="false"
             aria-controls="panel-weekly"
-            tabpanel="tab-weekly"
-            class="btn"
+            id="tab-weekly"
+            class="btn tab"
           >
             Weekly
           </button>
           <button
             role="tab"
-            aria-selected="true"
+            aria-selected="false"
             aria-controls="panel-monthly"
-            tabpanel="tab-monthly"
-            class="btn"
+            id="tab-monthly"
+            class="btn tab"
           >
             Monthly
           </button>
@@ -73,7 +73,6 @@
         role="tabpanel"
         aria-labelledby="tab-daily"
         id="panel-daily"
-       
         aria-hidden="false"
       >
         <div class="card timecard timecard-work">
@@ -247,7 +246,8 @@
               </button>
             </div>
             <div class="timecard--amt">
-              <p class="current">32hrs</p>last week - 35hrs</p>
+              <p class="current">32hrs</p>
+              <p class="previous">last week - 35hrs</p>
             </div>
           </div>
         </div>
@@ -399,7 +399,8 @@
               </button>
             </div>
             <div class="timecard--amt">
-              <p class="current">103hrs</p>last month - 128hrs</p>
+              <p class="current">103hrs</p>
+              <p class="previous">last month - 128hrs</p>
             </div>
           </div>
         </div>
